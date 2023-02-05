@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('css')
+   <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+@endsection
+
 @section('btn-logres')
   <div class="btn-logres-wrapper">
     <a href="/register" class="btn-logres">Register</a>

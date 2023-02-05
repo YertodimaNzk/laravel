@@ -1,0 +1,33 @@
+@import url('layouts.css')
+
+form {
+  margin: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+.form-wrapper {
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+.form-col {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.form-col-col {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+.col-gender {
+  display: flex;
+}
+.btn-submit {
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  background-color: yellow;
+  border: none;
+}
