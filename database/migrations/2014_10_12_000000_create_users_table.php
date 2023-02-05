@@ -17,10 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('name');
-            $table ->string('gender')(['male', 'female']);
+            $table->string('first-name');
+            $table->string('last-name');
+            $table ->string('gender');
             $table->boolean('isAdmin')->default(0);
-            $table->blob('picture');
+            $table->string('picture');
             $table->rememberToken();
             $table->timestamps();
         });

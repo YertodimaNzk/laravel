@@ -8,17 +8,17 @@
       <div class="form-col">
         <div class="form-col-col">
           <label for="first-name">First Name:</label>
-          <input type="text" id="first-name" name="first-name" />
+          <input type="text" id="first-name" name="first-name" value="{{ old('first-name') }}" />
         </div>
         <div class="form-col-col">
           <label for="last-name">Last Name:</label>
-          <input type="text" id="last-name" name="last-name" />
+          <input type="text" id="last-name" name="last-name" value="{{ old('last-name') }}" />
         </div>
       </div>
       <div class="form-col">
         <div class="form-col-col">
           <label for="email">Email:</label>
-          <input type="text" id="email" name="email" />
+          <input type="text" id="email" name="email" value="{{ old('email') }}" />
         </div>
         <div class="form-col-col">
           <label>Role</label>

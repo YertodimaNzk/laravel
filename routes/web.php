@@ -38,7 +38,7 @@ Route::get('/profile', function () {
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 
-Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/register', [RegisterController::class, 'validator']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 
