@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 @endsection
 @section('main')
+       <h1>Login</h1> 
       <form class="form">
         <div class="form-control">
           <label for="email">Email:</label>
