@@ -7,15 +7,6 @@
     <title>{{ $title }}</title>
   </head>
   <body>
-    <header>
-      <h1>Amazing E-Grocery</h1>
-      @yield('btn-logres')
-    </header>
-    <main>
-      @yield('main')
-    </main>
-    <footer>
-      <p>&copy; Amazing E-Grocery 2023</p>
-    </footer>
   </body>
 </html>
+@include('components.header')

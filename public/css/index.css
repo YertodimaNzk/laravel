@@ -11,9 +11,9 @@
 }
 
 .index-title {
-  padding: 4rem;
-  height: 300px;
-  width: 300px;
+  padding: 3rem;
+  height: 220px;
+  width: 220px;
   border: 10px solid yellow;
   border-radius: 50%;
   position: absolute;
