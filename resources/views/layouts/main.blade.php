@@ -7,6 +7,13 @@
     <title>{{ $title }}</title>
   </head>
   <body>
+    @include('components.header')
+    @if(!((Route::is('index')) || (Route::is('register')) || (Route::is('login'))))
+      @include('components.navbar')
+    @endif
+    <main>
+      @yield('main')
+    </main>
+    @include('components.footer')
   </body>
 </html>
-@include('components.header')

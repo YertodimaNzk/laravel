@@ -32,7 +32,7 @@
         <div class="form-col-col">
           <label>Role</label>
           <select id="role" name="role">
-            @foreach ($role->name as $role)
+            @foreach ($roles->name as $role)
             <option value="{{ $role }}">{{ $role }}</option>
             @endforeach
           </select>
@@ -42,7 +42,7 @@
         <div class="form-col-col">
           <label>Gender</label>
           <div class="col-gender">
-            @foreach ($gender->desc as $gender)
+            @foreach ($genders->desc as $gender)
             <input type="radio" id="{{ $gender }}" name="{{ $gender  }}" value="{{ $gender }}">
             <label for="{{ $gender }}">{{ $gender }}</label>
             @endforeach
