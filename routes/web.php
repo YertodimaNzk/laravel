@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AccountMaintenanceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,26 +19,20 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('home', [
+    return view('pages/index', [
         "title" => "Home",
         "active" => 'home'
     ]);
 });
 
-Route::get('/cart', function () {
-    return view('cart', [
-        'title' => 'Cart',
-        'active' => 'cart',
-    ]);
-});
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+/*
+Route::get('/cart', [CartController::class, 'index']->middleware('auth')
 
-Route::get('/profile', function () {
-    return view('profile', [
-        'title' => 'Profile',
-        'active' => 'profile',
-    ]);
-});
+Route::get('/profile', [ProfileController::class, 'index']->middleware('auth')
 
+Route::get('/account-maintenance', [AccountMaintenanceControlle::class, 'index']->middleware('auth')
+*/
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 
 Route::post('/register', [RegisterController::class, 'validator']);

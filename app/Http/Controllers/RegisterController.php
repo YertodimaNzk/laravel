@@ -18,16 +18,20 @@ class RegisterController extends Controller
     
     public function validator(Request $request)
     {
-        $validatedData = $request->validate([
-            'first-name' => ['required', 'string', 'max:25'],
-            'last-name' => ['required', 'string', 'max:25'],
-            'gender' => ['required','in:male,female'],
-            'role' => ['required', 'in:user,admin'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', Password::min(8)->letters()->numbers(), 'confirmed'],
-            'c-pass' => ['required', 'same:password', 'confirmed'],
-            'picture' => ['mimes:jpeg,png,jpg', 'size:4096']
-        ]);
+      $validatedData = $request->validate([
+        'first-name' => ['required', 'string', 'max:25'],
+        'last-name' => ['required', 'string', 'max:25'],
+        'gender' => ['required','in:male,female'],
+        'role' => ['required', 'in:user,admin'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'password' => ['required', 'string', Password::min(8)->letters()->numbers(), 'confirmed'],
+        'c-pass' => ['required', 'same:password', 'confirmed'],
+        'image' => ['mimes:jpeg,png,jpg', 'max:4096']
+      ]);
+        
+      $img_path = $request->file('picture')->validator('image', 'public/img');
+
+      $validatedData['image'] = $img_path;
     
       $validatedData['password'] = Hash::make($validatedData['password']);
 

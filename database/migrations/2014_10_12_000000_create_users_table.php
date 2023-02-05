@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('password');
             $table->string('first-name');
             $table->string('last-name');
-            $table ->string('gender');
-            $table->boolean('isAdmin')->default(0);
-            $table->string('picture');
+            $table->string('gender');
+            $table->string('role');
+            $table->string('image');
             $table->rememberToken();
             $table->timestamps();
         });

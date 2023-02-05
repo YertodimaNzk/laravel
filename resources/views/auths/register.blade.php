@@ -39,8 +39,8 @@
           </div>
         </div>
         <div class="form-col-col">
-          <label for="picture">Display Picture</label>
-          <input type="image" />
+          <label for="image">Display Image</label>
+          <input type="file" id="image" name="image"/>
         </div>
       </div>
       <div class="form-col">
