@@ -23,11 +23,8 @@ class AccountFactory extends Factory
             "last_name" => $this->faker->lastName(),
             "email" => $this->faker->unique()->safeEmail(),
             "display_image_link" => "",
-<<<<<<< HEAD
-            "password" => bcrypt('Kentod123'),
-=======
-            "password" => bcrypt('IN123')
->>>>>>> refs/remotes/origin/main
+             "password" => bcrypt('Kentod123'),
+
         ];
     }
 }
