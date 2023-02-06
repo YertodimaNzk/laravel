@@ -6,11 +6,6 @@
 
 @section('main')
   <h1>Register</h1>
-  @error('email')
-  <div class="error-messages">
-    {{ $message }}
-  </div>
-  @enderror
   <form method="post" action="/register">
     @csrf
     <div class="form-wrapper">
@@ -32,8 +27,8 @@
         <div class="form-col-col">
           <label>Role</label>
           <select id="role" name="role">
-            @foreach ($roles->name as $role)
-            <option value="{{ $role }}">{{ $role }}</option>
+            @foreach ($roles as $role)
+            <option value={{ $role->id }}>{{ $role->name }}</option>
             @endforeach
           </select>
         </div>
@@ -42,9 +37,9 @@
         <div class="form-col-col">
           <label>Gender</label>
           <div class="col-gender">
-            @foreach ($genders->desc as $gender)
-            <input type="radio" id="{{ $gender }}" name="{{ $gender  }}" value="{{ $gender }}">
-            <label for="{{ $gender }}">{{ $gender }}</label>
+            @foreach ($genders as $gender)
+            <input type="radio" id="{{ $gender->desc }}" name="gender" value={{ $gender->id }}>
+            <label for="{{ $gender->desc }}">{{ $gender->desc }}</label>
             @endforeach
           </div>
         </div>

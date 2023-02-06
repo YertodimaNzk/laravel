@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Account;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
@@ -23,11 +24,7 @@ class AccountFactory extends Factory
             "last_name" => $this->faker->lastName(),
             "email" => $this->faker->unique()->safeEmail(),
             "display_image_link" => "",
-<<<<<<< HEAD
-            "password" => bcrypt('Kentod123'),
-=======
-            "password" => bcrypt('IN123')
->>>>>>> refs/remotes/origin/main
+            "password" => Hash::make('Kentod123'),
         ];
     }
 }

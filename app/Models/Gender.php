@@ -10,4 +10,8 @@ class Gender extends Model
     use HasFactory;
     
     protected $guarded = ['id'];
+    
+    public function account() {
+      return $this->hasMany(Account::class);
+    }
 }

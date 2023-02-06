@@ -4,7 +4,8 @@
 @endsection
 @section('main')
        <h1>Login</h1> 
-      <form class="form">
+      <form class="form" action="/login" method="post">
+        @csrf
         <div class="form-control">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email">
@@ -15,7 +16,7 @@
           <input type="password" id="password" name="password">
         </div>
         <br>
-        <input type="submit" value="Submit" class="submit-button">
+        <button type="submit" value="Submit" class="submit-button">Submit</button>
       </form>
       <p class="register-text">
         Don't have an account? <a href="/register">Click here</a> to register.

@@ -11,7 +11,6 @@ class LoginController extends Controller
     {
         return view('auths.login', [
             'title' => 'Login',
-            'active' => 'login'
         ]);
     }
 
@@ -24,8 +23,10 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/home');
         }
+        
+        $credentials->dd();
 
         return back()->with('loginError', 'Login failed!');
     }
