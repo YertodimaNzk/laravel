@@ -38,3 +38,7 @@ Route::controller(LoginController::class)->group(function() {
   Route::post('/login', 'authenticate');
   Route::post('logout', 'logout');
 });
+
+Route::get('/cart', function () {
+  return view('cart');
+});
