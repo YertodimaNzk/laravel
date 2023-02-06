@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('account_id');
             $table->foreignId('item_id');
             $table->integer('price');
+            $table->timestamps();
         });
     }
 

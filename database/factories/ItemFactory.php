@@ -18,7 +18,7 @@ class ItemFactory extends Factory
     {
         return [
             "name" => $this->faker->name(),
-            "desc" => $this->faker->name(),
+            "desc" => $this->faker->sentence(),
             "price" => mt_rand(1,10)*100000
         ];
     }

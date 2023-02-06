@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
-            $table->string('display_imgae_link');
+            $table->string('display_image_link');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

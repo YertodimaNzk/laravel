@@ -19,11 +19,11 @@ class AccountFactory extends Factory
         return [
             "role_id" => mt_rand(1,2),
             "gender_id" => mt_rand(1,2),
-            "first_name" => $this->faker->name(),
-            "last_name" => $this->faker->name(),
-            "email" => $this->faker->safeEmail()->unique(),
+            "first_name" => $this->faker->firstName(),
+            "last_name" => $this->faker->lastName(),
+            "email" => $this->faker->unique()->safeEmail(),
             "display_image_link" => "",
-            "password" => bcrypt('Kentod123')
+            "password" => bcrypt('Kentod123'),
         ];
     }
 }
