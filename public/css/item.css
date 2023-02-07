@@ -1,2 +1,40 @@
 @import url('layouts.css');
-
+.item-container {
+    display: flex;
+  }
+  
+  .item-left {
+    width: 50%;
+    text-align: center;
+  }
+  
+  .item-right {
+    width: 50%;
+  }
+  
+  .item-name {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .item-price {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .item-description {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .buy-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
