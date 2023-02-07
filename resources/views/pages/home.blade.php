@@ -15,4 +15,7 @@
   </div>
   @endforeach
 </div>
+<div class="item-pages">
+  {{ $items->links() }}
+</div>
 @endsection
