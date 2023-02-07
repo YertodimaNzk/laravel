@@ -8,7 +8,7 @@ use App\Models\Item;
 class HomeController extends Controller
 {
     public function index() {
-      $items = Item::all();
+      $items = Item::paginate(10);
       return view('pages.home', [
         "title" => "Home",
         'items' => $items
