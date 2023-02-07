@@ -1,8 +1,8 @@
-<nav>
-    <ul>
-      <li><a href="/home">Home</a></li>
-      <li><a href="/cart">Cart</a></li>
-      <li><a href="/profile">Profile</a></li>
-      <li><a href="/account-management">Account Management</a></li>
+<nav class = "navup">
+    <ul class="ull">
+      <li class = "lil"><a class ="upcont" href="/home">Home</a></li>
+      <li class = "lil"><a class ="upcont" href="/cart">Cart</a></li>
+      <li class = "lil"><a class ="upcont" href="/profile">Profile</a></li>
+      <li class = "lil"><a class ="upcont" href="/account-management">Account Management</a></li>
     </ul>
 </nav>

@@ -23,3 +23,29 @@ footer {
   right: 0;
   bottom: 0;
 }
+
+.navup {
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+}
+
+.ull {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.lil {
+  margin: 0 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.upcont {
+  text-decoration: none;
+  color: black;
+}
