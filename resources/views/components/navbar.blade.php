@@ -1,4 +1,3 @@
-
 <nav class="main-nav">
     <ul class="main-navbar">
       <li><a href="/home">Home</a></li>
