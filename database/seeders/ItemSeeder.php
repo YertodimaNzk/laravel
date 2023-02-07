@@ -16,6 +16,7 @@ class ItemSeeder extends Seeder
      */
     public function run()
     {
+      if (Item::count('id') == 0) {
         Item::create([
            'name' => 'Asparagus',
            'desc' => '',
@@ -26,7 +27,7 @@ class ItemSeeder extends Seeder
            'name' => 'Beans',
            'desc' => '',
            'price' => 15000,
-           'image_link' => 'beand.jpg'
+           'image_link' => 'beans.jpg'
          ]);
          Item::create([
            'name' => 'Beansprouts',
@@ -80,7 +81,7 @@ class ItemSeeder extends Seeder
            'name' => 'Leek',
            'desc' => '',
            'price' => 1,
-           'image_link' 'leek.jpg'
+           'image_link' => 'leek.jpg'
          ]);
          Item::create([
            'name' => 'Letuce',
@@ -118,5 +119,6 @@ class ItemSeeder extends Seeder
             'price' => 1,
             'image_link' => 'yardlongbeans'
         ]);
+      }
     }
 }

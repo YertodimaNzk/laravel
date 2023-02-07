@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 class AccountMaintenanceController extends Controller
 {
-    return view('pages.cart', [
-      'title' => 'Cart',
-      'active' => 'cart'
+  public function index() {
+    return view('pages.account.maintenance', [
+      'title' => 'Account Maintenance',
     ]);
+  }
 }

@@ -15,7 +15,7 @@ class GenderSeeder extends Seeder
      */
     public function run()
     {
-      if(Gender::count('desc') == 0) {
+      if(Gender::count('id') == 0) {
         Gender::create([
             "desc" => "male",
           ]);

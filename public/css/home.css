@@ -1,0 +1,26 @@
+@import url('layouts.css');
+
+.items-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.item-wrapper {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.image-wrapper {
+  aspect-ratio: 1/1;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid black;
+  overflow: hidden;
+}
+img {
+  aspect-ratio: 1/1;
+  height: 100%;
+}

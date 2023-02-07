@@ -15,7 +15,7 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-      if(Role::count('name') == 0) {
+      if(Role::count('id') == 0) {
         Role::create([
           'name' => 'user',
         ]);

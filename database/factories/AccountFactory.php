@@ -24,7 +24,7 @@ class AccountFactory extends Factory
             "last_name" => $this->faker->lastName(),
             "email" => $this->faker->unique()->safeEmail(),
             "display_image_link" => "",
-            "password" => Hash::make('Kentod123');
+            "password" => Hash::make('Kentod123')
         ];
     }
 }
