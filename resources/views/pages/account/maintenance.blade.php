@@ -2,39 +2,49 @@
 <link rel="stylesheet" href="{{ asset('css/account-maintenance.css') }}">
 @endsection
 
-<table>
-  <thead>
-    <tr>
-      <th>Account</th>
-      <th>Role account</th>
-      <th>Update role</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($accounts as $account) : ?>
+<<table>
+  <tr>
+    <th>Account</th>
+    <th>Role Account</th>
+    <th>Update Role</th>
+    <th>Delete</th>
+  </tr>
+  <?php
+  $accounts = [
+      ['id' => 1, 'username' => 'user1', 'role' => 'admin'],
+      ['id' => 2, 'username' => 'user2', 'role' => 'user'],
+      ['id' => 3, 'username' => 'user3', 'role' => 'admin'],
+      ['id' => 4, 'username' => 'user4', 'role' => 'user'],
+      ['id' => 5, 'username' => 'user5', 'role' => 'admin']
+  ];
+  
+  foreach($accounts as $account) {
+      if($account['role'] == 'admin') {
+          $role = 'User';
+      } else {
+          $role = 'Admin';
+      }
+      ?>
       <tr>
-        <td><?= $account->name ?></td>
-        <td><?= $account->role ?></td>
-        <td>
-          <form action="{{ route('update-role', $account->id) }}" method="post">
-            @csrf
-            @method('PUT')
-            <select name="role">
-              <option value="admin" <?= $account->role === 'admin' ? 'selected' : '' ?>>Admin</option>
-              <option value="user" <?= $account->role === 'user' ? 'selected' : '' ?>>User</option>
-            </select>
-            <button type="submit">Update</button>
-          </form>
-        </td>
-        <td>
-          <form action="{{ route('delete-account', $account->id) }}" method="post">
-            @csrf
-            @method('DELETE')
-            <button type="submit">Delete</button>
-          </form>
-        </td>
+        <td>{{ $account['username']; }}</td>
+        <td>{{} $account['role']; }}</td>
+        <td><a href="#">Update Role</a></td>
+        <td><a href="#" onclick="confirmDelete({{ $account['id']; }})">Delete</a></td>
       </tr>
-    <?php endforeach; ?>
-  </tbody>
+      <?php
+  }
+  ?>
 </table>
+
+<script>
+  function confirmDelete(id) {
+      if(confirm("Are you sure you want to delete this account?")) {
+          // delete the account from the database here
+          // ...
+          
+          // remove the row from the table
+          var row = document.querySelector("tr[data-id='" + id + "']");
+          row.remove();
+      }
+  }
+</script>
