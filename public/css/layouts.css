@@ -36,19 +36,19 @@ footer {
   bottom: 0;
 }
 
-.navup {
+.main-nav {
   background-color: yellow;
   display: flex;
   justify-content: center;
 }
 
-.ull {
+.main-navbar {
   list-style-type: none;
   display: flex;
   justify-content: center;
 }
 
-.lil {
+li {
   margin: 0 10px;
   border: 1px solid gray;
   border-radius: 5px;
@@ -57,7 +57,7 @@ footer {
   align-items: center;
 }
 
-.upcont {
+a {
   text-decoration: none;
   color: black;
 }
