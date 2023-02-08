@@ -35,4 +35,33 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
+
 }
+
+.main-nav {
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+}
+
+.main-navbar {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  margin: 0 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
