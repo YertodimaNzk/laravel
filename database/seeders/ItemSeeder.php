@@ -69,7 +69,7 @@ class ItemSeeder extends Seeder
            'name' => 'Cucumbers',
            'desc' => '',
            'price' => 1,
-           'image_link' => 'cucumber.jpg'
+           'image_link' => 'cucumbers.jpg'
          ]);
          Item::create([
            'name' => 'Eggplants',
@@ -117,7 +117,7 @@ class ItemSeeder extends Seeder
             'name' => 'Yardlong Beans',
             'desc' => '',
             'price' => 1,
-            'image_link' => 'yardlongbeans'
+            'image_link' => 'yardlongbeans.jpg'
         ]);
       }
     }

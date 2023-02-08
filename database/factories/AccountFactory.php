@@ -23,7 +23,7 @@ class AccountFactory extends Factory
             "first_name" => $this->faker->firstName(),
             "last_name" => $this->faker->lastName(),
             "email" => $this->faker->unique()->safeEmail(),
-            "display_image_link" => "",
+            "image_profile" => "",
             "password" => Hash::make('Kentod123')
         ];
     }

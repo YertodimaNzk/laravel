@@ -16,7 +16,7 @@ class RegisterController extends Controller
         $roles = Role::all();
         $genders = Gender::all();
         
-        return view('auths.register', [
+        return view('auth.register', [
             'title' => 'Register',
             'roles' => $roles,
             'genders' => $genders,
@@ -31,19 +31,20 @@ class RegisterController extends Controller
         'first_name' => ['required', 'string', 'max:25'],
         'last_name' => ['required', 'string', 'max:25'],
         'email' => ['required', 'string', 'email', 'max:255', 'unique:accounts'],
-        'password' => ['required', 'string', Password::min(8)->letters()->numbers(), 'confirmed'],
-        'password_confirmation' => ['required', 'same:password', 'confirmed'],
+        'password' => ['required', 'string', Password::min(8)->letters()->numbers()],
+       /* 'password_confirmation' => ['required', 'same:password', 'confirmed'], */
         'display_image_link' => ['mimes:jpeg,png,jpg', 'max:4096']
       ]);
         
-      $img_path = $request->file('picture')->validator('image', 'public/img');
+      /*$img_path = $request->file('image')->validator('image', 'public/img');*/
+      $validatedData['role_id'] = number_format($validatedData['role_id']);
+      $validatedData['gender_id'] = number_format($validatedData['gender_id']);
 
-      $validatedData['display_image_link'] = $img_path;
+      $validatedData['display_image_link'] = '';
     
       $validatedData['password'] = Hash::make($validatedData['password']);
-
-      Account::create($validatedData);
-    
+      
+      Account::create([$validatedData]);
       return redirect('/login')->with('success', 'Registration successfull! Please login');
     }
 }

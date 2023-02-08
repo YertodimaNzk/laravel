@@ -35,6 +35,15 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
+    
+    /*protected function prepareException(Exception $e)
+    {
+        if ($e instanceof TokenMismatchException) {
+            $e = new HttpException(419, 'Your session has expired. Please refresh the page to continue using the system.', $e);
+        }
+
+        return parent::prepareException($e);
+    }*/
 
     /**
      * Register the exception handling callbacks for the application.

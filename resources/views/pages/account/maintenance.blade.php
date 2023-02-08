@@ -4,36 +4,22 @@
 
 <<table>
   <tr>
-    <th>Account</th>
-    <th>Role Account</th>
-    <th>Update Role</th>
-    <th>Delete</th>
+    <td>Account</td>
+    @foreach ($accounts as $account)
+    <td>{{ $account->first_name . $account->last_name }} - {{ $account->role_id }}</td>
+    @endforeach
   </tr>
-  <?php
-  $accounts = [
-      ['id' => 1, 'username' => 'user1', 'role' => 'admin'],
-      ['id' => 2, 'username' => 'user2', 'role' => 'user'],
-      ['id' => 3, 'username' => 'user3', 'role' => 'admin'],
-      ['id' => 4, 'username' => 'user4', 'role' => 'user'],
-      ['id' => 5, 'username' => 'user5', 'role' => 'admin']
-  ];
-  
-  foreach($accounts as $account) {
-      if($account['role'] == 'admin') {
-          $role = 'User';
-      } else {
-          $role = 'Admin';
-      }
-      ?>
-      <tr>
-        <td>{{ $account['username']; }}</td>
-        <td>{{} $account['role']; }}</td>
-        <td><a href="#">Update Role</a></td>
-        <td><a href="#" onclick="confirmDelete({{ $account['id']; }})">Delete</a></td>
-      </tr>
-      <?php
-  }
-  ?>
+  <tr>
+    <td>Action</td>
+    @foreach ($accounts as $account)
+    <td>Update Delete
+      <span>
+        <a href="/account/update">Update</a>
+        <a href="/account/delete">Delete</a>
+      </span>
+    </td>
+    @endforeach
+  </tr>
 </table>
 
 <script>

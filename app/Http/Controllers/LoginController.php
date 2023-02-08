@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('auths.login', [
+        return view('auth.login', [
             'title' => 'Login',
         ]);
     }
@@ -25,8 +25,6 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('/home');
         }
-        
-        $credentials->dd();
 
         return back()->with('loginError', 'Login failed!');
     }
