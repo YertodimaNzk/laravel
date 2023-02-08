@@ -19,12 +19,12 @@ use App\Http\Controllers\AccountMaintenanceController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware('auth')->group(function() {
+Route::middleware('guest')->group(function() {
   Route::get('/home', [HomeController::class, 'index'])->name('home');
   Route::get('/cart', [CartController::class, 'index'])->name('cart');
   Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
   Route::get('/item/{items:id}', [ItemController::class, 'index']);
-  Route::middleware('auth')->group(function () {
+  Route::middleware('guest')->group(function () {
     Route::get('/account/maintenance', [AccountMaintenanceController::class, 'index']);
   });
 });
