@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Order;
 class CartController extends Controller
 {
-    return view('pages.cart', [
-      'title' => 'Cart',
-      'active' => 'cart'
-    ]);
+    public function index()
+    {
+      $orders = Order::all();
+        return view('pages.cart', [
+          'title' => 'Cart',
+          'orders' => $orders
+        ]);
+    }
 }
